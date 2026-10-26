@@ -1,0 +1,9 @@
+#pragma once
+
+#ifdef _WIN32
+    #define PLUGIN_EXPORT extern "C" __declspec(dllexport)
+#else
+    #define PLUGIN_EXPORT extern "C"
+#endif
+typedef const char* (*GetFunctionNameFn)();
+typedef double (*EvaluateFn)(double);
